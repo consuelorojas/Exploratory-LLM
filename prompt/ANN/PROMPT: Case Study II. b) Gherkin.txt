@@ -1,0 +1,8 @@
+Given the files, generate me a pytest for the acceptance criteria:
+
+Given I have a trained digit recognition model
+And  a test set
+When I classify the test set using that model
+Then  I get an accuracy of more than 95 percent
+
+Use good coding python conventions, and make sure to import any packages / fixture that you use. Do not refer to any non-existent resources. When importing files, take the project structure into account.

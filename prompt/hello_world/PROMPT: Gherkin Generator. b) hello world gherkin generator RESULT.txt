@@ -1,0 +1,6 @@
+Feature: Functionality Requirements
+
+  Scenario: Logging "hello world" to the console
+    Given a function that logs messages to the console
+    When I call this function with no arguments or parameters
+    Then it should log "hello world" to the console

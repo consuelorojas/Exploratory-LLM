@@ -1,0 +1,1 @@
+Write pytest tests for the following acceptance criteria: When I run the main function, Then I receive ‘hello world’  in the standard output
