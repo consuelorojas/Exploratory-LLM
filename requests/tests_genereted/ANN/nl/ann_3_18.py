@@ -1,6 +1,7 @@
 import sys
 import pathlib
 sys.path.append(str(pathlib.Path(__file__).parent[4] / 'code' / 'ANN'))
+from main import ClassifyDigits
 
 
 import numpy as np

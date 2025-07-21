@@ -1,7 +1,7 @@
 from pathlib import Path
 import os
 
-BASE_TEST_DIR = Path("requests/tests_generated").resolve()
+BASE_TEST_DIR = Path("requests/tests_genereted").resolve()
 
 for root, _, files in os.walk(BASE_TEST_DIR):
     for file in files:
@@ -14,7 +14,7 @@ for root, _, files in os.walk(BASE_TEST_DIR):
 
         parts = file_path.parts
         try:
-            idx = parts.index("tests_generated")
+            idx = parts.index("tests_genereted")
             project = parts[idx + 1]
         except (ValueError, IndexError):
             print(f"Could not determine project for: {file_path}")
