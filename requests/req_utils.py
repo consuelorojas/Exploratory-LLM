@@ -8,14 +8,18 @@ URL_DEL = "http://localhost:8001/v1/ingest"
 
 
 # add context to the llm
-def add_context(file_path, ollamaHost):
-    files = {"file": open(f"code/{file_path}", "r")}
+def add_context(file_path):
+
+    if not os.path.exists(file_path):
+        raise FileNotFoundError(f"[!] Context file not found: {file_path}")
+    files = {"file": open(file_path, "rb")}
     
-    response = requests.post(url=ollamaHost, files=files)
+    response = requests.post(url=URL_CONTEXT, files=files)
     context_id = response.json()["data"][0]["doc_id"]
 
     return context_id
 
+# not gonna use it
 # add instructions to get the prompt in gherkin syntaxis
 def change_to_gherkins_prompt(text):
     add_on = "change the following instructions to Gherkin syntaxis\n"
@@ -73,7 +77,8 @@ def request_code(prompt, url):
 # as its called: delete the context
 def delete_context(url_id):
     #response
-    requests.delete(url=url_id)
+    url = f"{URL_DEL}/{url_id}"
+    requests.delete(url=url)
 
 def save_code(code, filename):
     with open(filename, "w") as file:

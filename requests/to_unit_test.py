@@ -1,38 +1,56 @@
-import pandas as pd
-import json
-import sys
+from tqdm import tqdm
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from pathlib import Path
 import os
-
-
-
 import req_utils as req
 
+NUM_REQUESTS = 100
+MAX_WORKERS = 5
+
+def run_single_request(i, prompt, url_request, path_test_files):
+    try:
+        code = req.request_code(prompt, url_request)
+        output_path = os.path.join(path_test_files, f"ann_2_{i}.py")
+        req.save_code(code, output_path)
+    except Exception as e:
+        print(f"[!] Error in request {i}: {e}")
+
 def main():
-    ## depending of the type of request, the json to read
-
-    ### from nl to unit test
-    df = pd.read_json("pgpt.json")
-    test_path = 'test/nl_test'
-
-    ## from specifics gherkins to unit test
-    # df = pd.read_json('prompts/ghk1_prompts/all_prompts.json')
-    # test_path = 'test/ghk1_test'
-
-    ## from nl summary to unit test
-    # df = pd.read_json("simplified_prompts/all_summaries_clean.json")
-    # test_path = 'test/summ_test'
-
-    ## from gherkins sum to unit test
-    # df = pd.read_json('prompts/ghk2_prompts/all_prompts.json')
-    # test_path = 'test/ghk2_test'
-
+    # read prompt
+    # prompt_path = "/home/consuelo/Documentos/GitHub/Exploratory-LLM/prompt/hello_world/ghk.txt"
+    prompt_path = "/home/consuelo/Documentos/GitHub/Exploratory-LLM/prompt/ANN/ghk.txt"
+    with open(prompt_path, "r") as f:
+        prompt = f.read()
     
-    for i, row in df.iterrows():
-        codefile = f"task_{row["task_num"]}.py"
-        prompt = row["prompt"]
+    prompt = str(prompt)
 
-        req.llm_request(codefile, test_path, prompt)
+    # add context
+    
+    #context_path = "/home/consuelo/Documentos/GitHub/Exploratory-LLM/code/hello_world/main.py"
+    context_path = "/home/consuelo/Documentos/GitHub/Exploratory-LLM/code/ANN/main.py"
 
+    # unsilenced for gherkins pdf syntaxis.
+    context_path_ghk = "/home/consuelo/Documentos/GitHub/Exploratory-LLM/gherkin-reference.pdf"
+    context_id_ghk = req.add_context(context_path_ghk)
+
+    context_id = req.add_context(context_path)
+
+    url_request = "http://localhost:8001/v1/completions"
+    path_test_files = "tests_genereted/ANN/ghk"
+    Path(path_test_files).mkdir(parents=True, exist_ok=True)
+
+    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
+        futures = [
+            executor.submit(run_single_request, i, prompt, url_request, path_test_files)
+            for i in range(NUM_REQUESTS)
+        ]
+
+        # Wrap with tqdm to track progress as futures complete
+        for _ in tqdm(as_completed(futures), total=NUM_REQUESTS, desc="Requests completed"):
+            pass  # just advance progress bar per completed future
+
+    req.delete_context(context_id)
+    req.delete_context(context_id_ghk)
 
 if __name__ == "__main__":
     main()
