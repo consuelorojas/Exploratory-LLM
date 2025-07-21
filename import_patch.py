@@ -5,16 +5,6 @@ import re
 
 BASE_TEST_DIR = Path("requests/").resolve()
 
-ALL_FILES = os.listdir(BASE_TEST_DIR)
-
-#print(ALL_FILES)
-
-#for dirpath, folders, filenames in list(os.walk(TEST_DIR)):
-#    for folder in folders:
-        
-
-
-
 
 
 for root, _, files in os.walk(BASE_TEST_DIR):
@@ -27,7 +17,7 @@ for root, _, files in os.walk(BASE_TEST_DIR):
         # Extract project (ANN, hello_world)
         parts = file_path.parts
         try:
-            idx = parts.index("tests_genereted")
+            idx = parts.index("tests_generated")
             project = parts[idx + 1]
         except (ValueError, IndexError):
             print(f"Could not determine project for: {file_path}")

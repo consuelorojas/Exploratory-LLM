@@ -2,8 +2,7 @@ import json
 import os
 import argparse
 import sys
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "code", "hello_world")))
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "requests")))
+
 from evaluation import compilation, test_runner, coverage
 
 def run_evaluation(code_file, test_file, results_file):

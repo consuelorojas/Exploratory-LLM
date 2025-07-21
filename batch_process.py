@@ -6,28 +6,28 @@ from pathlib import Path
 from concurrent.futures import ProcessPoolExecutor, as_completed
 
 # Directories
-CODE_DIR = Path("code/hello_world")
-TEST_DIR = Path("requests/tests_generated/hello_world")
-RESULTS_DIR = Path("results/hello_world")
+CODE_DIR = Path("code/ANN")
+TEST_DIR = Path("requests/tests_generated/ANN/nl")
+RESULTS_DIR = Path("results/ANN/nl")
 
 # Ensure output dir exists
 RESULTS_DIR.mkdir(parents=True, exist_ok=True)
 
 # Collect valid test files: hw_<number>*.py
 test_files = sorted([
-    f for f in TEST_DIR.glob("hw_*.py")
-    if re.match(r"hw_\d+.*\.py", f.name)
+    f for f in TEST_DIR.glob("ann_*.py")
+    if re.match(r"ann_\d+.*\.py", f.name)
 ])
 
 # Prepare tasks
 tasks = []
-for test_file in test_files:
-    match = re.match(r"hw_(\d+)", test_file.stem)
+for i, test_file in enumerate(test_files):
+    match = re.match(r"ann_(\d+)", test_file.stem)
     if not match:
         print(f"Skipping invalid file name: {test_file.name}")
         continue
 
-    task_num = match.group(1)
+    task_num = i
     code_path = CODE_DIR / "main.py"  # adjust if needed
     result_path = RESULTS_DIR / f"results_{task_num}.json"
 
@@ -42,7 +42,7 @@ def run_task(task):
     task_num, code_path, test_path, result_path = task
     try:
         subprocess.run([
-            "python", "run_evaluation.py",
+            "python3", "run_evaluation.py",
             str(code_path),
             str(test_path),
             str(result_path)
@@ -54,7 +54,7 @@ def run_task(task):
                 metrics["task_num"] = task_num
                 return metrics
     except Exception as e:
-        print(f"Error processing hw_{task_num}: {e}")
+        print(f"Error processing ann_{task_num}: {e}")
     return None
 
 # Run tasks in parallel
