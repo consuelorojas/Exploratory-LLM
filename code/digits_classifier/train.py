@@ -1,4 +1,5 @@
-import digits_classifier.constants as constants
+#import digits_classifier.constants as constants
+import constants
 import tensorflow as tf
 
 def train_digit_recognition_model(x_train, y_train, x_test, y_test) -> tf.keras.models.Model:

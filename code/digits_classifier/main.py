@@ -2,13 +2,15 @@ from numpy.typing import NDArray
 
 import argparse
 import tensorflow as tf
-import digits_classifier.interfaces as interfaces
+#import digits_classifier.interfaces as interfaces
+import interfaces
 import PIL.Image
 import numpy as np
-import digits_classifier.constants as constants
+#import digits_classifier.constants as constants
+import constants
 
-
-model = tf.keras.models.load_model(constants.MODEL_DIGIT_RECOGNITION_PATH)
+print("Loading model from:", constants.MODEL_DIGIT_RECOGNITION_PATH)
+model = tf.keras.models.load_model(constants.MODEL_DIGIT_RECOGNITION_PATH, compile=False)
 
 class ClassifyDigits(interfaces.IClassifyDigits):
     def __call__(self, images: NDArray) -> NDArray[np.int_]:
