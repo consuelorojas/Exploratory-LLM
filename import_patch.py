@@ -1,5 +1,6 @@
 import os
 from pathlib import Path
+import re
 
 BASE_TEST_DIR = Path("requests/tests_generated").resolve()
 
@@ -9,8 +10,8 @@ for root, _, files in os.walk(BASE_TEST_DIR):
             continue
 
         file_path = Path(root) / file
-
         parts = file_path.parts
+
         try:
             idx = parts.index("tests_generated")
             project = parts[idx + 1]
@@ -18,32 +19,32 @@ for root, _, files in os.walk(BASE_TEST_DIR):
             print(f"Could not determine project for: {file_path}")
             continue
 
-        # Compose the sys.path.append line to add code/<project> to sys.path
-        import_path_line = (
+        if project == "digits_classifier":
+            path_to_add = "/home/consuelo/Documentos/GitHub/Exploratory-LLM/code"
+        elif project == "hello_world":
+            path_to_add = "/home/consuelo/Documentos/GitHub/Exploratory-LLM/code/hello_world"
+        else:
+            print(f"Unknown project: {project} — skipping")
+            continue
+
+        import_snippet = (
             "import sys\n"
-            "import pathlib\n"
-            f"sys.path.append(str(pathlib.Path(__file__).parents[3] / 'code' / '{project}'))\n\n"
+            f"sys.path.append('{path_to_add}')\n\n"
         )
 
         with open(file_path, "r", encoding="utf-8") as f:
-            content = f.read()
+            lines = f.readlines()
 
-        # Remove any old import from main statements you don't want, e.g.
-        # 'from main import ClassifyDigits' or 'from main import main'
-        import_statements_to_remove = [
-            "from main import ClassifyDigits",
-            "from main import main",
+        # Remove any existing sys.path.append or import sys/pathlib lines
+        cleaned_lines = [
+            line for line in lines
+            if not re.search(r"(sys\.path\.append|import\s+sys|import\s+pathlib)", line)
         ]
-        for stmt in import_statements_to_remove:
-            if stmt in content:
-                print(f"Removing old import '{stmt}' in {file_path}")
-                content = content.replace(stmt, "")
 
-        # Add the sys.path.append snippet if not present
-        if import_path_line.strip() not in content:
-            print(f"Adding import path patch to {file_path}")
-            content = import_path_line + content
-            with open(file_path, "w", encoding="utf-8") as f:
-                f.write(content)
-        else:
-            print(f"Import path patch already present in {file_path}")
+        # Prepend the correct import snippet
+        new_content = import_snippet + "".join(cleaned_lines)
+
+        with open(file_path, "w", encoding="utf-8") as f:
+            f.write(new_content)
+
+        print(f"Patched: {file_path}")

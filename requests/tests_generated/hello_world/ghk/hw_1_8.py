@@ -1,11 +1,11 @@
 import sys
-import pathlib
-sys.path.append(str(pathlib.Path(__file__).parent.parent.parent / 'code' / 'hello_world'))
+sys.path.append('/home/consuelo/Documentos/GitHub/Exploratory-LLM/code/hello_world')
+
+
 from main import main
 
 
 import io
-import sys
 from unittest.mock import patch
 import pytest
 

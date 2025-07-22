@@ -1,10 +1,10 @@
 import sys
-import pathlib
-sys.path.append(str(pathlib.Path(__file__).parent.parent.parent / 'code' / 'hello_world'))
+sys.path.append('/home/consuelo/Documentos/GitHub/Exploratory-LLM/code/hello_world')
+
+
 from main import main
 
 
-import sys
 from io import StringIO
 import pytest
 from your_module import main  # Replace 'your_module' with the actual module name where the main function is defined
@@ -24,7 +24,6 @@ def test_main_function(capsys):
 Alternatively, you can use `contextlib.redirect_stdout` and `StringIO` for testing:
 
 ```python
-import sys
 from io import StringIO
 import pytest
 from contextlib import redirect_stdout

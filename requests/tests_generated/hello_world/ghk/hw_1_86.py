@@ -1,10 +1,10 @@
 import sys
-import pathlib
-sys.path.append(str(pathlib.Path(__file__).parent.parent.parent / 'code' / 'hello_world'))
+sys.path.append('/home/consuelo/Documentos/GitHub/Exploratory-LLM/code/hello_world')
+
+
 from main import main
 
 
-import sys
 from io import StringIO
 import pytest
 from your_module import main  # Replace 'your_module' with the actual name of your module
@@ -23,7 +23,6 @@ def redirect_stdout(monkeypatch):
 
 def test_main_function_alt():
     """Test that the main function prints 'hello world' to stdout (alternative)."""
-    import sys
     from your_module import main  # Replace 'your_module' with the actual name of your module
 
     original_stdout = sys.stdout
