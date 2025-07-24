@@ -1,0 +1,890 @@
+[
+    {
+        "compilation_success": true,
+        "tests_run": 1,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.5,
+        "task_num": 5
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 1,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 17
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 1,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 7
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 1,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 19
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 1,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.5,
+        "task_num": 18
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 1,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 10
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 1,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 6
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 1,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 1
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 0,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.0,
+        "task_num": 4
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 1,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 2
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 1,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 13
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 2,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.5,
+        "task_num": 15
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 1,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.5,
+        "task_num": 3
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 0,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.0,
+        "task_num": 16
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 1,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.5,
+        "task_num": 12
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 1,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.5,
+        "task_num": 0
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 2,
+        "test_pass_rate": 0.5,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 14
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 1,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 9
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 1,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 20
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 2,
+        "test_pass_rate": 0.5,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 21
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 2,
+        "test_pass_rate": 0.5,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 26
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 1,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 22
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 1,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 29
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 1,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 25
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 3,
+        "test_pass_rate": 0.33,
+        "timeout": false,
+        "coverage_percent": 0.5,
+        "task_num": 28
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 1,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 36
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 0,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.0,
+        "task_num": 32
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 0,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.0,
+        "task_num": 30
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 0,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.0,
+        "task_num": 31
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 1,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.5,
+        "task_num": 27
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 1,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.0,
+        "task_num": 38
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 1,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 23
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 1,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 24
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 3,
+        "test_pass_rate": 0.33,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 39
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 1,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 37
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 0,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.0,
+        "task_num": 33
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 0,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 40
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 0,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 43
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 0,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.5,
+        "task_num": 47
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 0,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 50
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 0,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 49
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 0,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 46
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 1,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 44
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 0,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 51
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 1,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 42
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 0,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 52
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 0,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 48
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 0,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 54
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 0,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 55
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 1,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 53
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 0,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 60
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 1,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 45
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 0,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 58
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 0,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 63
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 1,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.5,
+        "task_num": 56
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 1,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 57
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 0,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 62
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 1,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 59
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 1,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 64
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 1,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 65
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 1,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 67
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 0,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 76
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 1,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.5,
+        "task_num": 66
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 0,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.5,
+        "task_num": 77
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 1,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 69
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 1,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.5,
+        "task_num": 71
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 1,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 70
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 0,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.0,
+        "task_num": 68
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 1,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 75
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 1,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 74
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 2,
+        "test_pass_rate": 1.0,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 73
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 1,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 78
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 1,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 82
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 0,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.0,
+        "task_num": 81
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 1,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 80
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 1,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 83
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 0,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.0,
+        "task_num": 79
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 1,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 84
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 0,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.0,
+        "task_num": 85
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 1,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 88
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 3,
+        "test_pass_rate": 0.33,
+        "timeout": false,
+        "coverage_percent": 0.5,
+        "task_num": 86
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 1,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 90
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 1,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 89
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 1,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 87
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 1,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 92
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 2,
+        "test_pass_rate": 0.5,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 96
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 1,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 94
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 2,
+        "test_pass_rate": 0.5,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 95
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 1,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.5,
+        "task_num": 93
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 1,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 97
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 1,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 98
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 0,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.0,
+        "task_num": 99
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 3,
+        "test_pass_rate": 0.33,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 101
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 3,
+        "test_pass_rate": 0.33,
+        "timeout": false,
+        "coverage_percent": 0.5,
+        "task_num": 100
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 1,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.5,
+        "task_num": 104
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 1,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 102
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 1,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 103
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 1,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 105
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 2,
+        "test_pass_rate": 0.5,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 107
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 1,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 108
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 1,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 106
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 1,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 111
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 1,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 115
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 2,
+        "test_pass_rate": 0.5,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 112
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 0,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.0,
+        "task_num": 110
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 1,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 116
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 1,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 113
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 1,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 114
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 2,
+        "test_pass_rate": 0.5,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 117
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 0,
+        "test_pass_rate": 0.0,
+        "timeout": false,
+        "coverage_percent": 0.0,
+        "task_num": 109
+    },
+    {
+        "compilation_success": true,
+        "tests_run": 2,
+        "test_pass_rate": 0.5,
+        "timeout": false,
+        "coverage_percent": 0.67,
+        "task_num": 118
+    }
+]

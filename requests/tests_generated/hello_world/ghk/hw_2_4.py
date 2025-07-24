@@ -26,3 +26,6 @@ def test_main(mock_stdout, expected_output):
 
     # Then
     assert mock_stdout.getvalue() == expected_output[0]
+
+
+print("script done running")

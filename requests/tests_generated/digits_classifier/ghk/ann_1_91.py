@@ -1,3 +1,4 @@
+import tensorflow as tf
 import sys
 sys.path.append('/home/consuelo/Documentos/GitHub/Exploratory-LLM/code')
 

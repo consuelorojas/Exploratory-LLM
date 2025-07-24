@@ -7,7 +7,6 @@ from main import main
 
 from io import StringIO
 import pytest
-from your_module import main  # Replace 'your_module' with the actual module name where the main function is defined
 
 
 def test_main_function(capsys):

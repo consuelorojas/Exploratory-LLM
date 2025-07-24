@@ -6,23 +6,23 @@ from pathlib import Path
 from concurrent.futures import ProcessPoolExecutor, as_completed
 
 # Directories
-CODE_DIR = Path("code/hello_world")
-TEST_DIR = Path("requests/tests_generated/hello_world/nl")
-RESULTS_DIR = Path("results/hello_world/nl")
+CODE_DIR = Path("code/digits_classifier")
+TEST_DIR = Path("requests/tests_generated/digits_classifier/nl")
+RESULTS_DIR = Path("results/digits_classifier/nl")
 
 # Ensure output dir exists
 RESULTS_DIR.mkdir(parents=True, exist_ok=True)
 
-# Collect valid test files: hw_<number>*.py
+# Collect valid test files: ann_<number>*.py
 test_files = sorted([
-    f for f in TEST_DIR.glob("hw_*.py")
-    if re.match(r"hw_\d+.*\.py", f.name)
+    f for f in TEST_DIR.glob("ann_*.py")
+    if re.match(r"ann_\d+.*\.py", f.name)
 ])
 
 # Prepare tasks
 tasks = []
 for i, test_file in enumerate(test_files):
-    match = re.match(r"hw_(\d+)", test_file.stem)
+    match = re.match(r"ann_(\d+)", test_file.stem)
     if not match:
         print(f"Skipping invalid file name: {test_file.name}")
         continue
@@ -32,7 +32,7 @@ for i, test_file in enumerate(test_files):
     result_path = RESULTS_DIR / f"results_{task_num}.json"
 
     if result_path.exists():
-        print(f"Skipping hw_{task_num}: result already exists.")
+        print(f"Skipping ann_{task_num}: result already exists.")
         continue
 
     tasks.append((task_num, code_path, test_file, result_path))

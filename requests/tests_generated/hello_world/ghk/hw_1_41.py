@@ -7,7 +7,6 @@ from main import main
 
 from io import StringIO
 import pytest
-from your_module import main  # Replace 'your_module' with the actual name of your module
 
 def test_main_function(capsys):
     """Test that the main function prints 'hello world' to stdout."""
@@ -27,3 +26,5 @@ def test_main_function_with_fixtures(capture_stdout):
     """Test that the main function prints 'hello world' to stdout using fixtures."""
     main()
     assert capture_stdout.getvalue().strip() == "hello world"
+
+print("script done running")

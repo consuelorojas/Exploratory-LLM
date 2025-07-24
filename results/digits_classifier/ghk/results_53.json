@@ -1,7 +1,7 @@
 {
     "compilation_success": true,
     "tests_run": 3,
-    "test_pass_rate": 0.0,
+    "test_pass_rate": 0.33,
     "timeout": false,
     "coverage_percent": 0.5
 }

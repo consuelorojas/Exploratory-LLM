@@ -11,7 +11,6 @@ import pytest
 
 def test_main_function(capsys):
     """Test that 'hello world' is printed to stdout when running the main function."""
-    from your_module import main  # Replace with actual module name
     
     main()
     
@@ -22,7 +21,6 @@ def test_main_function(capsys):
 @pytest.mark.parametrize("expected_output", ["hello world"])
 def test_main_function_with_monkeypatch(monkeypatch, expected_output):
     """Test that 'hello world' is printed to stdout when running the main function."""
-    from your_module import main  # Replace with actual module name
     
     captured = io.StringIO()
     
@@ -35,7 +33,6 @@ def test_main_function_with_monkeypatch(monkeypatch, expected_output):
 # Using pytest's capfd fixture
 def test_main_function_with_capfd(capfd):
     """Test that 'hello world' is printed to stdout when running the main function."""
-    from your_module import main  # Replace with actual module name
     
     main()
     
