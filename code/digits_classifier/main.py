@@ -10,7 +10,9 @@ import numpy as np
 import constants
 
 print("Loading model from:", constants.MODEL_DIGIT_RECOGNITION_PATH)
-model = tf.keras.models.load_model(constants.MODEL_DIGIT_RECOGNITION_PATH, compile=False)
+model_path = constants.MODEL_DIGIT_RECOGNITION_PATH
+model = tf.keras.models.load_model(model_path,
+                                    compile=False)
 
 class ClassifyDigits(interfaces.IClassifyDigits):
     def __call__(self, images: NDArray) -> NDArray[np.int_]:
@@ -26,5 +28,6 @@ if __name__ == "__main__":
     parser.add_argument("image_path", type=str)
 
     args = parser.parse_args()
-
-    print(ClassifyDigits()(images=np.array(PIL.Image.open(args.image_path).convert('L').resize((28, 28)))))
+    x = PIL.Image.open(args.image_path).convert('L').resize((28, 28))
+    images = np.array(x)
+    print(ClassifyDigits()(images=images))

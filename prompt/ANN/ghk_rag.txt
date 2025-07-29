@@ -1,0 +1,7 @@
+Using the submitted files, write pytest tests for the following acceptance criteria:
+
+Scenario: Recognizing more than 95 percent of digits correctly
+Given a function capable of recognizing digit strings
+And a dataset containing various single-digit numbers (0 through 9) and other random string data
+When I test this function with at least ten different inputs from my dataset
+Then it should recognize over 95% of the input as digits correctly

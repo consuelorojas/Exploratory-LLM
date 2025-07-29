@@ -9,4 +9,4 @@ def delete_empty_files(folder_path):
             file.unlink()
 
 # Example usage
-delete_empty_files("/home/consuelo/Documentos/GitHub/Exploratory-LLM/requests/tests_genereted/ANN/ghk")
+delete_empty_files("/home/consuelo/Documentos/GitHub/Exploratory-LLM/requests/tests_generated/digits_classifier/ghk_rag")
