@@ -35,41 +35,30 @@ def test_recognize_digits(classifier, image_path):
     # Get prediction from classifier
     predicted_digit = classifier(images=images)[0]
 
-    # Assuming we have a way to get the actual digit value (e.g., filename)
+    # Assuming we have a way to get the actual digit value (e.g., filename or label)
     expected_digit = int(os.path.basename(image_path).split('.')[0])
 
     assert predicted_digit == expected_digit
 
-def test_recognize_digits_accuracy(classifier):
+def test_recognize_digits_bulk(classifier):
     """
-    Test that the classifier recognizes over 95% of digits correctly.
+    Test the classifier with multiple images from MNIST dataset.
     
     :param classifier: A ClassifyDigits instance
     """
-    # Load MNIST test data for testing purposes
+    # Load and preprocess MNIST data for testing purposes
     x_test, y_test = load_mnist_test_data()
 
     correct_count = 0
 
     for i in range(10):  # Test with at least ten different inputs from the dataset
         img = x_test[i]
-        images = np.array(img) / 255.0
+        images = np.array(img).reshape((1, 28 * 28))
+
         predicted_digit = classifier(images=images)[0]
 
         if predicted_digit == y_test[i]:
             correct_count += 1
 
     accuracy = (correct_count / len(y_test[:10])) * 100
-
-    assert accuracy > 95, f"Accuracy {accuracy} is less than the expected threshold of 95%"
-
-def test_load_model():
-    """
-    Test that the model loads correctly.
-    
-    This ensures we're testing with a valid model instance.
-    """
-    try:
-        tf.keras.models.load_model(model_path)
-    except Exception as e:
-        pytest.fail(f"Failed to load model: {e}")
+    assert accuracy > 95.0

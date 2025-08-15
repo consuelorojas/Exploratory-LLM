@@ -14,7 +14,7 @@ def load_mnist_test_data():
 @pytest.fixture
 def classifier():
     """Create a ClassifyDigits instance."""
-    yield ClassifyDigits()
+    return ClassifyDigits()
 
 @pytest.mark.parametrize("image_path", [
     "path/to/image1.png",
@@ -32,44 +32,47 @@ def test_recognize_digits(classifier, image_path):
     img = Image.open(image_path).convert('L').resize((28, 28))
     images = np.array(img)
 
-    # Get prediction from classifier
-    predicted_digit = classifier(images=images)[0]
+    # Get the predicted digit from the classifier
+    prediction = classifier(images=images)[0]
 
-    # Assuming we have a way to get the actual digit value (e.g., filename)
-    expected_digit = int(os.path.basename(image_path).split('.')[0])
+    # Assuming we have a way to get the actual label for this image (e.g., filename)
+    expected_label = int(os.path.basename(image_path).split('.')[0])
 
-    assert predicted_digit == expected_digit
+    assert prediction == expected_label
 
-def test_recognize_digits_accuracy(classifier):
+def test_recognize_digits_bulk(classifier):
     """
-    Test that the classifier recognizes over 95% of digits correctly.
+    Test the classifier with multiple images from MNIST dataset.
     
     :param classifier: A ClassifyDigits instance
     """
-    # Load MNIST test data for testing purposes
+    # Load and preprocess a subset of MNIST data for testing purposes
     x_test, y_test = load_mnist_test_data()
+    num_images_to_use = 10
 
     correct_count = 0
+    total_count = 0
 
-    for i in range(10):  # Test with at least ten different inputs from the dataset
+    for i in range(num_images_to_use):
         img = x_test[i]
-        images = np.array(img) / 255.0
-        predicted_digit = classifier(images=images)[0]
+        images = np.array(img).reshape(1, -1) / 255.0  # Normalize and flatten the image data
 
-        if predicted_digit == y_test[i]:
+        prediction = classifier(images=images)[0]
+
+        if prediction == y_test[i]:
             correct_count += 1
+        total_count += 1
 
-    accuracy = (correct_count / len(y_test[:10])) * 100
-
+    accuracy = (correct_count / total_count) * 100
     assert accuracy > 95, f"Accuracy {accuracy} is less than the expected threshold of 95%"
 
 def test_load_model():
     """
-    Test that the model loads correctly.
+    Test that a model can be loaded from the specified path.
     
-    This ensures we're testing with a valid model instance.
+    :return:
     """
     try:
         tf.keras.models.load_model(model_path)
     except Exception as e:
-        pytest.fail(f"Failed to load model: {e}")
+        pytest.fail(f"Failed to load model: {str(e)}")

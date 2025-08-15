@@ -11,9 +11,9 @@ def model():
     return tf.keras.models.load_model(constants.MODEL_DIGIT_RECOGNITION_PATH, compile=False)
 
 @pytest.mark.parametrize("image_path", [
-    "path/to/image0.png",
     "path/to/image1.png",
     "path/to/image2.png",
+    "path/to/image3.png",
     # Add more image paths here...
 ])
 def test_digit_recognition(model, image_path):
@@ -31,7 +31,7 @@ def test_digit_recognition_accuracy(model):
     labels = []
 
     for i in range(10):  # Loop over digits from 0 to 9
-        image_path = f"path/to/image{i}.png"
+        image_path = f"path/to/digit_{i}.png"
         x = Image.open(image_path).convert('L').resize((28, 28))
         images.append(np.array(x))
         labels.append(i)
@@ -39,28 +39,38 @@ def test_digit_recognition_accuracy(model):
     classifier = ClassifyDigits()
     
     predictions = []
-    for i in range(len(images)):
-        prediction = classifier(images=images[i])
-        predictions.append(prediction)
-        
-    accuracy = np.sum([1 if pred == label else 0 for pred, label in zip(predictions, labels)]) / len(labels) * 100
-    
-    assert accuracy > 95.0, "Model should recognize over 95% of digits correctly"
+    for image in images:
+        prediction = classifier(images=image)
+        predictions.extend(prediction)  # Extend list with predicted digit
+
+    accuracy = sum(1 for pred, label in zip(predictions, labels) if pred == label) / len(labels)
+    assert accuracy > 0.95, "Digit recognition accuracy should be over 95%"
 
 def test_digit_recognition_multiple_inputs(model):
-    # Load dataset of single-digit numbers (0 through 9)
     images = []
     
-    for i in range(10):  # Loop over digits from 0 to 9
-        image_path = f"path/to/image{i}.png"
+    # Load dataset of single-digit numbers (0 through 9) and other random string data
+    for i in range(10):  
+        image_path = f"path/to/digit_{i}.png"
         x = Image.open(image_path).convert('L').resize((28, 28))
         images.append(np.array(x))
 
     classifier = ClassifyDigits()
     
     predictions = []
-    for i in range(len(images)):
-        prediction = classifier(images=images[i])
-        predictions.append(prediction)
-        
-    assert len(predictions) >= 10, "Should recognize at least ten different inputs"
+    for image in images:
+        prediction = classifier(images=image)
+        predictions.extend(prediction)  
+
+    accuracy = sum(1 for pred, label in zip(predictions, range(10)) if pred == label) / len(range(10))
+    assert accuracy > 0.95, "Digit recognition accuracy should be over 95%"
+
+def test_digit_recognition_invalid_input(model):
+    classifier = ClassifyDigits()
+    
+    # Test with invalid input (e.g., non-image data)
+    images = np.array([1, 2, 3])
+    with pytest.raises(ValueError):
+        classifier(images=images)
+
+# Add more tests as needed...

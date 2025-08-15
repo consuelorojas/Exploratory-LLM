@@ -2,3 +2,4 @@ venv
 .vscode
 .coverage
 *.pyc
+hello_world_results.drawio

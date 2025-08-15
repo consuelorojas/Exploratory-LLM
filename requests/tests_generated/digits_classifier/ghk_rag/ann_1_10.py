@@ -1,3 +1,4 @@
+import tensorflow as tf
 
 # tests/test_digit_recognition.py
 import pytest

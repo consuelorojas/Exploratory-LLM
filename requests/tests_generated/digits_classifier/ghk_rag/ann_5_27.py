@@ -14,7 +14,7 @@ def load_mnist_test_data():
 @pytest.fixture
 def classifier():
     """Create a ClassifyDigits instance."""
-    yield ClassifyDigits()
+    return ClassifyDigits()
 
 @pytest.mark.parametrize("image_path", [
     "path/to/image1.png",
@@ -32,44 +32,39 @@ def test_recognize_digits(classifier, image_path):
     img = Image.open(image_path).convert('L').resize((28, 28))
     images = np.array(img)
 
-    # Get prediction from classifier
-    predicted_digit = classifier(images=images)[0]
+    # Make predictions using the classifier
+    prediction = classifier(images=images)[0]
 
-    # Assuming we have a way to get the actual digit value (e.g., filename)
+    # Check if the predicted digit matches the expected value (assuming file name contains the correct label)
     expected_digit = int(os.path.basename(image_path).split('.')[0])
+    assert prediction == expected_digit
 
-    assert predicted_digit == expected_digit
-
-def test_recognize_digits_accuracy(classifier):
+def test_recognize_digits_bulk(classifier):
     """
-    Test that the classifier recognizes over 95% of digits correctly.
+    Test the classifier with a bulk dataset.
     
     :param classifier: A ClassifyDigits instance
     """
     # Load MNIST test data for testing purposes
     x_test, y_test = load_mnist_test_data()
 
-    correct_count = 0
+    # Preprocess and make predictions using the classifier in batches of 10 images at a time
+    num_correct_predictions = 0
+    batch_size = 10
 
-    for i in range(10):  # Test with at least ten different inputs from the dataset
-        img = x_test[i]
-        images = np.array(img) / 255.0
-        predicted_digit = classifier(images=images)[0]
+    for i in range(0, len(x_test), batch_size):
+        batch_images = x_test[i:i+batch_size]
+        batch_labels = y_test[i:i+batch_size]
 
-        if predicted_digit == y_test[i]:
-            correct_count += 1
+        # Preprocess the image data (normalize and flatten)
+        images = batch_images / 255.0
+        images = images.reshape(-1, 28 * 28)
 
-    accuracy = (correct_count / len(y_test[:10])) * 100
+        predictions = classifier(images=images)
 
-    assert accuracy > 95, f"Accuracy {accuracy} is less than the expected threshold of 95%"
+        num_correct_predictions += np.sum(predictions == batch_labels)
 
-def test_load_model():
-    """
-    Test that the model loads correctly.
-    
-    This ensures we're testing with a valid model instance.
-    """
-    try:
-        tf.keras.models.load_model(model_path)
-    except Exception as e:
-        pytest.fail(f"Failed to load model: {e}")
+    accuracy = num_correct_predictions / len(x_test) * 100
+
+    # Check if the model recognizes over 95% of digits correctly
+    assert accuracy > 95.0, f"Model recognized only {accuracy:.2f}% of digits correctly"

@@ -4,13 +4,13 @@ from pathlib import Path
 import os
 import req_utils as req
 
-NUM_REQUESTS = 20
-MAX_WORKERS = 4
+NUM_REQUESTS = 50
+MAX_WORKERS = 2
 
 def run_single_request(i, prompt, url_request, path_test_files):
     try:
         code = req.request_code(prompt, url_request)
-        output_path = os.path.join(path_test_files, f"ann_3_{i}.py")
+        output_path = os.path.join(path_test_files, f"ann_5_{i}.py")
         req.save_code(code, output_path)
     except Exception as e:
         print(f"[!] Error in request {i}: {e}")
@@ -19,7 +19,6 @@ def main():
     # read prompt
     # prompt_path = "/home/consuelo/Documentos/GitHub/Exploratory-LLM/prompt/hello_world/ghk.txt"
     prompt_path = "/home/consuelo/Documentos/GitHub/Exploratory-LLM/prompt/ANN/ghk_rag.txt"
-
 
     with open(prompt_path, "r") as f:
         prompt = f.read()

@@ -1,7 +1,7 @@
 import os
 from pathlib import Path
 
-TARGET_DIR = Path("requests/tests_generated/digits_classifier").resolve()
+TARGET_DIR = Path("requests/tests_generated/digits_classifier/ghk_rag").resolve()
 
 for root, _, files in os.walk(TARGET_DIR):
     for file in files:

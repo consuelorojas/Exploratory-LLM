@@ -1,3 +1,4 @@
+import tensorflow as tf
 
 import pytest
 from your_module import ClassifyDigits, model_path
